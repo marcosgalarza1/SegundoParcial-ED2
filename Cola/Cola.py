@@ -54,3 +54,18 @@ class Cola:
                 actual = actual.siguiente
             print("------")
 
+    def maximo(self):
+        if self.esta_vacia():
+            print("Error: Cola vacía")
+            return None
+        
+        max_valor = self.frente.valor
+        actual = self.frente.siguiente
+        
+        while actual:
+            if actual.valor > max_valor:
+                max_valor = actual.valor
+            actual = actual.siguiente
+        
+        return max_valor
+
